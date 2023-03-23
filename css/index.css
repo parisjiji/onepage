@@ -1,0 +1,383 @@
+@import url(common.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+html{scroll-behavior: smooth;}
+
+body{
+  font-family: 'Montserrat', sans-serif; 
+  color: #333;
+  position: relative;
+}
+
+
+/* top button___ */
+/* .top a{
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  background: url(image/top.png) no-repeat right bottom fixed;
+  background-size: 50px;
+  width: 50px;
+  height: 50px;
+  transition: 0.5s;
+}
+
+.top a:hover{
+  background: url(image/top_on.png) no-repeat right bottom fixed;
+} */
+
+.top{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.top a{
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url(../image/top.png) no-repeat;
+  transition: 0.35s;
+}
+
+.top a:hover{background-image: url(../image/top_on.png);}
+
+
+
+
+
+
+/* header___________________________________ */
+
+header{
+  width: 100%;
+  height: 80px;
+  background-color: #000;
+}
+
+nav{
+  width: 1200px;
+  height: inherit;
+  margin: auto;
+  display: flex;
+  justify-content: space-between; /* 왼쪾으로 붙기 때문에 양쪽으로 몰아넣음 */
+  align-items: center;
+}
+/* li에 가로배열 해야되는까 부모인gnb에 flex */
+.gnb{display: flex;}
+.gnb li{margin: 0 15px}
+.gnb li a{
+  color: #fff;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.gnb li a:hover{color: orange;}
+
+
+/* main___________________________________ */
+
+main{
+  width: 100%;
+  height: 600px;
+  background: url(../image/main.png) no-repeat center top; /* fixed안해야 이미지 제대로 나오는경우 */
+  background-size: cover;
+}
+.caption{
+  height: inherit; /* 600받음 */
+  display: flex; /* flex방향을 row에서 column으로 바꾸면 세로배열이 된다. */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.caption h1{
+  font-family: "Century Gothic", arial;
+  color: goldenrod;
+  font-size: 70px;
+  font-weight: 100;
+  text-transform: capitalize;
+}
+.caption strong{
+  color: #ddd;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+
+/* section___________________________________ */
+
+section{
+  text-align: center;
+}
+section h2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+section h3{
+  font-weight: 400;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #777;
+}
+section>div{margin-top:70px;}
+
+
+
+/* ///////////////// about */
+
+.ab_num{
+  width: 100%;
+  height: 250px;
+  background-color: #eee;
+  margin-top: 30px;
+}
+.ab_num ul{
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit; /* 250px 받는다. */
+}
+.ab_num ul li span:nth-child(1){ /* icon font */
+  font-size: 60px;
+  color: #555;
+  vertical-align: top;
+}
+.ab_num ul li span:nth-child(2){
+  font-size: 42px;
+  color: #555;
+  font-weight: 500;
+  padding-left: 15px;
+}
+.ab_num ul li span:nth-child(3){
+  display: block;
+  font-size: 20px;
+  color: #666;
+  padding-left: 60px;
+}
+
+
+/* ///////////////// our skill */
+.stick{
+  width: 1200px;
+  margin: 80px auto 0; /* 하는 각 제목에 띄어놨기 때문에 굳이 또 띌 필요없다. */
+  overflow: hidden; /* 플로트 문제 해결. 사용법1 */
+}
+.stick div{
+  float: left;
+  width: 48%;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 30px;
+  overflow: hidden; /* 넘치는 자식을 숨기기.사용법2 */
+}
+.stick div:nth-child(2){float: right;} /* 우선순위가 높아서 right먹는다. */
+
+.stick div p.bar1{
+  width: 85%;
+  height: 100%;
+  background-color: royalblue;
+}
+.stick div p.bar2{
+  width: 75%;
+  height: 100%;
+  background-color: yellowgreen;
+}
+
+.stick div p span{
+  color: #fff;
+  text-align: left; /* 블록으로 바꿔야 먹음 */
+  display: block;
+  padding-left: 25px;
+  line-height: 40px; /* 부모높이랑 똑같이. */
+}
+
+/* ///////////////// our service */
+.service_img{
+  width: 1200px;
+  margin: 80px auto 0;
+}
+.service_img ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+.service_img ul li{
+  width: 280px;
+  height: 280px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column; /* 두줄 이상이면 콜럼을 써줘야함.안그러면 크게 보임 */
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ///////////////// our portfolio */
+#portfolio{
+  width: 100%;
+  height: 1000px;
+  background-color: #ccc;
+  padding-top: 70px;
+}
+.tabmenu{
+  /* border: 1px solid red; */
+  width: 1200px;
+  height: 100px;
+  margin: auto;
+}
+.tabmenu ul{
+  height: inherit;
+  display: flex;
+  justify-content: space-around; /* 비트윈보다 안에 들어와서 더 예뻐보인다 */
+  align-items: center;
+}
+
+.tabmenu ul li:first-child{
+  border-bottom: 3px solid #09f;
+  padding: 0 30px;
+  padding-bottom: 10px;
+}
+
+.tabmenu ul li a{
+  color: #000;
+  text-transform: capitalize;
+
+}
+/* 플로트는 모자라는 부분은 밑으로 내려감 */
+.tabimg{
+  /* border: 1px solid blue; */
+  width: 1200px;
+  margin: auto;
+}
+/* 
+.tabimg ul{overflow: hidden;}
+.tabimg ul li{
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 30px;
+}
+.tabimg ul li:last-child,
+.tabimg ul li:nth-child(4){
+  margin-right: 0;
+} */
+
+.tabimg ul{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-row-gap: 30px;
+}
+
+
+/* ///////////////// our team */
+.team_img{
+  width: 1200px;
+  height: 450px;
+  margin: auto;
+}
+
+.team_img ul{
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team_img h4{
+  color: orange;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+
+
+
+/* ///////////////// our blog */
+
+#blog{
+  height: 800px;
+  background-color: aliceblue;
+  padding-top: 70px;
+}
+.blog_img{
+  width: 1200px;
+  height: 500px;
+  margin: 60px auto 0;
+}
+.blog_img ul{
+  width: inherit;
+  display: flex;
+  justify-content: center;
+}
+.btitle{
+  /* border: 1px solid red; */
+  width: 80%;
+  margin: auto;
+}
+
+.btitle h5{
+  color: royalblue;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin: 15px 0;
+}
+
+.btitle p{text-align: left;}
+
+.btitle a{
+  display: block;
+  margin-top: 50px;
+  text-align: left;
+  text-decoration: underline;
+  color: #000;
+}
+
+/* button */
+
+
+.btn{
+  display: block;
+  width: 200px;
+  height: 45px;
+  line-height: 45px;
+  margin: 70px auto 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.btn:hover{
+  border-color: #09f;
+  color: #09f;
+}
+
+
+
+
+/* footer___________________________________ */
+footer{
+  width: 100%;
+  height: 120px;
+  background-color: #ddd;
+  text-align: center;
+  padding-top: 50px;
+  color: #666;
+}
+address{
+  font-style: normal;
+  margin-top: 20px;
+  color: #000;
+}
+address strong{color: crimson;}
+
+
+
